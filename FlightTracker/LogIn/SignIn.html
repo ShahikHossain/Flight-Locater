@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0%;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+        }
+#form {
+    display: flex;
+    flex-direction:column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    gap: 20px;
+    backdrop-filter: blur(20px);
+    padding: 50px 50px 50px 50px;
+    border-radius: 2%;
+    box-shadow: 0 0 90px rgb(13, 13, 13);
+}
+.input{
+    display: flex;
+    flex-direction: row;
+}
+input{
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right,#0f4c81, #25aae1)1;
+}
+button{
+    width: 70px;
+    display: block;
+    margin: 0% auto;
+}
+@media  screen and (max-width:770px){
+    input{
+        height:15px
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="img-div">
+        <img src="bg.jpg" id="img">
+    </div>
+    <div id="form">
+        <h1 align="center">Sign In</h1>
+        <div class="input">
+        <label>E-Mail: </label>
+        <input type="email" id="email" autocomplete="email">
+        </div>
+        <div class="input">
+        <label>Password: </label>
+        <input type="password" id="password">
+        </div>
+        <button id="submit">Submit</button>
+        <p>Do not have an account?<a href="/FlightTracker/SignUp/login.html">Sign Up</a>.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/LogIn/SignIn.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-repeat: no-repeat; 
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+input{
+    width: 350px;
+    height: 30px;
+    margin-bottom: 20px;
+     border: 2px solid transparent;
+     border-image: linear-gradient(to right,#A8C0FF,#3F2B96) 1;
+}
+#body{
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 50%;
+    right: 17%;
+    transform: translateY(-50%);
+    border-radius: 16px;
+    background-color: rgba(255, 254, 254,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 90px rgb(0, 0, 0);
+    padding: 20px 32px;
+    width: auto;
+    max-width: 90vw;
+}
+#submit{
+    width: 20%;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+@media screen and (max-width:760px){
+    #body{
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        padding: 20px;
+    }
+    input{
+        width: 200px;
+        height: 20px;
+    }
+        #submit {
+            width: auto;
+            height: auto;
+            padding: 5px;
+            display: block;
+            margin-left: 0 auto;
+            font-size: small;
+        }
+}
+    </style>
+</head>
+<body>
+<img src="watermark-removed (1).png" alt="">
+<div id="body">
+        <h1 align="center">Flight Tracker</h1>
+        <form>
+        <input type="text" placeholder="Enter your name" autocomplete="name" id="name"><br><br>
+        <input type="email" placeholder="Enter your email-address" autocomplete="email" id="email"><br><br>
+        <input type="date" placeholder="Enter your DOB" autocomplete="bday-day" id="date"><br><br>
+        <input type="password" placeholder="Enter your password" autocomplete="new-password" id="password">
+        </form>
+        <button id="submit">SUBMIT</button>
+        <p align="center">Already have an account?<a href="https://flightlocater.netlify.app/Login/SignIn.html" target="_blank">Sign IN</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/SignUp/login.js"></script>
+</body>
+</html>=

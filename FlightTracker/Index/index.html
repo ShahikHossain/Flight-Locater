@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #map{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        body{
+            margin: 0%;
+        }
+        #all{
+            display: flex;
+            flex-direction: row;
+        }
+        #select{
+            width: calc(100vw - 93vw);
+        }
+        #all{
+            position: absolute;
+            top: 1%;
+            left:35%;
+             gap: 5px;
+        }
+        #load{
+          border: 2px solid transparent;  
+          border-image: linear-gradient(45deg, #ff007f, #7928ca, #00dfd8, #ff007f) 1;
+          animation: gradientrotate 4s linear infinite;
+        }
+        @keyframes gradientrotate{
+            0%{
+                filter: hue-rotate(0deg);
+            }
+             100%{
+                filter: hue-rotate(365deg);
+            }
+        }
+        @media screen and (max-width:768px){
+            #all{
+                top:12%;
+                left: 0;
+                gap: 5px;
+            }
+            button{
+                width: auto;
+                height: auto;
+                padding: 0.5px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <div id="map"></div>
+<div id="all">
+    <form>
+    <input type="text" placeholder="Airport code, e.g. CCU" id="input" autocomplete="off" style="text-transform: uppercase;">
+    <input type="button" id="submit" value="submit">
+    </form>
+    <select id="select">
+        <option value="destination" selected>Departure</option>
+        <option value="arrival">Arrival</option>
+        <option value="IATA">IATA</option>
+    </select>
+    <button id="load">Load planes</button>
+    <button id="reset">Reset all search results</button>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI6wA0qhX_Hve2xROneHUVn41tDWb8IJ0&libraries=marker">
+</script>
+<script src="/Index/FlightTracker.js"></script>
+</body>
+</html>
